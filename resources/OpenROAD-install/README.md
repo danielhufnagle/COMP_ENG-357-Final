@@ -51,3 +51,7 @@ cd src
 ```
 ./openroad
 ```
+or to open with the gui 
+```
+./openroad -gui
+```
