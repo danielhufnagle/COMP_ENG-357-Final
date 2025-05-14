@@ -7,5 +7,5 @@ The project aims to develop a GPU-accelerated parallel optimization framework fo
 
 We will go through [OpenRoad](https://github.com/the-openroad-project), looking for algorithms in these stages of VLSI physical design that will be efficiently parallelizable on a GPU. As OpenRoad already implements these algorithms in C++, utilizing CUDA for parallelization on an Nvidia GPU should be doable given our time constraints. We will maintain our own fork of OpenRoad, where we will aim to implement our GPU-accelerated algorithms and then test against OpenRoad’s.
 
-Overleaf Link: https://www.overleaf.com/6493982245rtmtzqskkryx#5f39fb
-
+[Overleaf Link](https://www.overleaf.com/6493982245rtmtzqskkryx#5f39fb)
+[OpenROAD Fork](https://github.com/danielhufnagle/OpenROAD#)
