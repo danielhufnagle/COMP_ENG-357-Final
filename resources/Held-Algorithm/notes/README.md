@@ -23,9 +23,9 @@ All three of $at(p)$, $slew(p)$ and $rat(p)$ are propagated to each pin $p$ in t
 *Additional Assumptions*:
 - Assume the propagation of single slew values throughout this paper.
 More on the gate sizing problem
-The gate sizing problem consists of taking each cell in set of cells ($c\in C$) and assigning them to a library cell in the discrete cell library ($B\in \Beta$).
+The gate sizing problem consists of taking each cell in set of cells ($c\in C$) and assigning them to a library cell in the discrete cell library ($B\in \mathfrak{B}$).
 *Terminology*:
-- $[c] \subset \Beta$: the set of logically equivalent cells to which $c$ may be assigned
+- $[c] \subset \mathfrak{B}$: the set of logically equivalent cells to which $c$ may be assigned
 In typical formulations, the assignment should be chosen such that some objective function, e.g. the total power or area consumption is minimized while all timing constraints are met, i.e. $slack(p)\geq0$ for all $p\in P$.
 Besides slacks, slew limits $slew(q)\leq slewlim(q)$ for all input pins $q\in P_{in}(c),\;c\in C$ as well as capacitance limits $downcap(p)\leq caplim(p)$ for all output pins $p\in P_{out}(c)$ must be preserved.
 Gate sizing is mostly applied when no feasible solution exists, a practical objective is to maximize the worst slack, but to also push less critical negative slacks towards 0. This solution reduces the need for other more intensive optimization routines.
