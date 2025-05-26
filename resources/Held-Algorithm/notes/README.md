@@ -12,21 +12,20 @@ The algorithm is a two-step process:
 - $P_{out}(c)$: the set of output pins on a cell
 *Additional Assumptions*:
 - $C$ contains one fixed cell to represent the primary inputs and outputs of the chip
-The timing constraints considered are based on static timing analysis with slew propagation.
+The timing constraints considered are based on static timing analysis with slew propagation.\
 *Terminology*:
 - $G^T$: directed timing graph that describes signal propagation on the set of pins
 - $at(p)$: latest arrival time of a signal arriving at pin p
 - $slew(p)$: slew of a signal arriving at pin p
-- $rat(p)$: required arrival time of a signal at pin p
+- $rat(p)$: required arrival time of a signal at pin p\
 All three of $at(p)$, $slew(p)$ and $rat(p)$ are propagated to each pin $p$ in the design.
-- $slack(p)$: defined as $rat(p)-at(p)$, it indicates the criticality of the timing signal in $p$. $slack(p)\geq 0$ implies that the paths through $p$ could be delayed by that amount without violating the timing constraints. Otherwise, the most critical path needs to be accelerated by at least $-slack(p)$.
+- $slack(p)$: defined as $rat(p)-at(p)$, it indicates the criticality of the timing signal in $p$. $slack(p)\geq 0$ implies that the paths through $p$ could be delayed by that amount without violating the timing constraints. Otherwise, the most critical path needs to be accelerated by at least $-slack(p)$.\
 *Additional Assumptions*:
-- Assume the propagation of single slew values throughout this paper.
-More on the gate sizing problem
-The gate sizing problem consists of taking each cell in set of cells ($c\in C$) and assigning them to a library cell in the discrete cell library ($B\in \mathfrak{B}$).
+- Assume the propagation of single slew values throughout this paper.\
+The gate sizing problem consists of taking each cell in set of cells ($c\in C$) and assigning them to a library cell in the discrete cell library ($B\in \mathfrak{B}$).\
 *Terminology*:
-- $[c] \subset \mathfrak{B}$: the set of logically equivalent cells to which $c$ may be assigned
-In typical formulations, the assignment should be chosen such that some objective function, e.g. the total power or area consumption is minimized while all timing constraints are met, i.e. $slack(p)\geq0$ for all $p\in P$.
+- $[c] \subset \mathfrak{B}$: the set of logically equivalent cells to which $c$ may be assigned\
+In typical formulations, the assignment should be chosen such that some objective function, e.g. the total power or area consumption is minimized while all timing constraints are met, i.e. $slack(p)\geq0$ for all $p\in P$.\
 Besides slacks, slew limits $slew(q)\leq slewlim(q)$ for all input pins $q\in P_{in}(c),\;c\in C$ as well as capacitance limits $downcap(p)\leq caplim(p)$ for all output pins $p\in P_{out}(c)$ must be preserved.
 Gate sizing is mostly applied when no feasible solution exists, a practical objective is to maximize the worst slack, but to also push less critical negative slacks towards 0. This solution reduces the need for other more intensive optimization routines.
 ## Fast global gate sizing
