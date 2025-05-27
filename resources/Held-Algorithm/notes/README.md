@@ -32,6 +32,111 @@ The gate sizing problem consists of taking each cell in set of cells ($c\in C$) 
 </a>
 
 In typical formulations, the assignment should be chosen such that some objective function, e.g. the total power or area consumption is minimized while all timing constraints are met, i.e. $slack(p)\geq0$ for all $p\in P$.\
-Besides slacks, slew limits $slew(q)\leq slewlim(q)$ for all input pins $q\in P_{in}(c),\;c\in C$ as well as capacitance limits $downcap(p)\leq caplim(p)$ for all output pins $p\in P_{out}(c)$ must be preserved.
+Besides slacks, slew limits $slew(q)\leq slewlim(q)$ for all input pins $q\in P_{in}(c),c\in C$ as well as capacitance limits $downcap(p)\leq caplim(p)$ for all output pins $p\in P_{out}(c)$ must be preserved.
 Gate sizing is mostly applied when no feasible solution exists, a practical objective is to maximize the worst slack, but to also push less critical negative slacks towards 0. This solution reduces the need for other more intensive optimization routines.
 ## Fast global gate sizing
+The slew targeting algorithm is as follows
+```python
+initialize_slew_targets(output_pins)
+while (!stopping_criterion):
+  assign_library_cells(cells)
+  timing_analysis()
+  refine_slew_targets()
+return best_assignment
+```
+Breaking this down a little more:
+
+```python
+initialize_slew_targets(output_pins)
+```
+
+Slew targets $slewt(p)$ is assigned to all output pins $p\in P_{out}(c), c\in C$. Slew targets are initialized such that the slew limits will just be met at subsequent sinks (accounting for slew degradation on the wires).
+
+```python
+assign_library_cells(cells)
+```
+
+Cell sizes are chosen such that the slew targets are met. The slew targets are updated based on an estimate of the slew gradient that guides the cell to a locally optimum solution when refined.
+
+To bound running time, the algorithm avoids incremental timing updates. Instead the timing is updated for the complete design by a timing oracle in line 4 once per iteration. This is to allow the algorithm to take advantage of a parallel timing engine. Assigning library cells and refining slew targets can be parallelized as well.
+
+```python
+stopping_criterion
+```
+
+The stopping criterion is met when all of the following are true:
+- Current cell assignment worsens the worst slack
+- increases a weighted sum of the absolute worst negative slack (WS), the absolute sum of negative slacks (SNS) divided by the number of endpoints, and the average cell area
+</a>
+
+If the criterion i smet, the assignment of the previous iteration, which achieves the best present objective value, is recovered.
+
+### Assigning cells to library cells - further breakdown
+Cells are assigned to the smallest equivalent library cell such that the slew targets at all of their output pins (usually just output pin - singular) are met. This choice depends on the input slews and output loads, respectively the4 layout and sink pin capacitances of the output nets. These values depend on the sizes of other cells.
+
+As the downstream network usually has a bigger impact on the cell timing than the input slew, it is preferable to know the exact downstream capacitances when sizing a cell. Let:
+- $G_c$ be the directed graph with vertices for each $c\in C$ and an edge connecting the predecessor cells $c'$ with $c$ if there is a connection between an output pin of $c'$ and an input pin of $c$.
+</a>
+
+Cells are processed in order of decreasing distance (under unit edge lengths) from a register in the acyclic subgraph, which arises from $G_c$ by omitting edges entering register vertices.
+#### Input slew estimation
+When a cell $c$ is sized, the successor sizes are already known except for the registers as successors. While the slews of the input pins of cell $c$ are dependedt on the unknown predecessor sizes, they can be reasonably estimated by the slew targets.
+
+For a pin $q\in P_{in}(c)$ with predecessor $p'\in\delta^-_{G_T}(q)$ (predecessor has a directed edge to c), the estimated final slew in $p'$ is the following:
+
+$$
+est\textunderscore slew(p')=\theta slewt(p')-(1-\theta)slew(p')
+$$
+
+Where $\theta$ is a weight that starts at 1 and progressively moves down to 0 with each global iteration. This means that in the beginning, predecessor slews will end up closer to $est\textunderscore slew(p')$ than $slew(p')$. When changes if the predecessor size become less likely with further iterations, the computed slews begin to dominate the estimate.
+
+To get the estimate for $slew(q)$, we need to add the slew degradation on the wire $slew\textunderscore degrad(p',q)$ to $est\textunderscore slew(p')$. When the pin capacitance of $q$ changes, the slew degradation will too, which can be approximated quickly by an RC-delay model for the wire
+#### Sizing
+Now given the estimated predecessor slews and the layout of the output network, the minimum cell size for $c$ preserving the slew targets (and load capacitance limits) can be computed performing a local timing analysis through $c$ and its downstream wires for all available library cells in $[c]$. 
+
+Note a level of cells with equal distance levels can be sized in parallel.
+
+If delay and slew propagation through a cell are parameterized by load capacitance and input slews, sizing can be accelerated by look-up table, but this becomes far too inefficient for more complex delay models
+
+To speed up the overall algorithm, we only perform one iteration of assignment, leaving it to the next global iteration to remove sub-optimal or illegal assignments.
+### Refining slew targets - further breakdown
+The slew target $slewt(p)$ is refined based on the *global* and *local criticality* of $p$. The global criticality $slk^+(p)$ is just the slack at $p$, with $p$ being globally critical if the slack is negative.
+
+$$
+slk^+(p)=slack(p)=rat(p)-at(p)
+$$
+
+Local criticality indicates whether the worst of the slacks in $p$ and its direct predecessors can be improved by either accelerating $c$ by decreasing $slewt(p)$, or by decreasing the input pin capacitances of $c$ by increasing $slewt(p)$.
+
+The predecessor criticality of cell $c$ is defined as follows
+
+$$
+slk^-(c)=min(slack(p'))
+$$
+
+Given that $p'$ is a direct predecessor of $c$.
+
+Then we can define the local criticality of $p$ by the following:
+
+$$
+lc(p)=max(slk^+(p)-slk^-(c), 0)
+$$
+
+$p$ is locally critical if $lc(p)=0$, meaning that $p$ is either located on a worst-slack path through a most critical predecessor of $c$, or $p$ is an output pin of a register whose output path is at least as critical as any path through its predecessors.
+
+The algorithm to update the slew targets of a cell $c$ in a global iteration is as follows. 
+```python
+theta_k = 1/log(k + CONSTANT)
+slk_minus = min(slack(p')) given p' in c.predecessors
+for output_pin in output_pins(c):
+  slk_plus = slack(p)
+  lc(p)=max(slk_plus - slk_minus, 0)
+  if slk_plus < 0 and lc(p) == 0:
+    delta_slewt = -min(theta_k * gamma * slk_plus(p), max_change)
+  else:
+    slk_plus = max(slk_plus, lc(p))
+    delta_slewt = min(theta_k * gamma * slk_plus(p), max_change)
+  slewt(p) = slewt(p) + delta_slewt
+  project slewt(p) into [slewt([p]), slewlim(p)]
+```
+Essentially, if $p$ is globally and locally critical, we decrease $slewt(p)$ by subtracting a number proportional to $slk^+(p)$ but not exceeding the constant $max\textunderscore change$. Otherwise, we increase $slewt(p)$ by adding a number proportional to the maximum of $slk^+(p)$ and $lc(p)$. The gamma ($\gamma$) constant is an estimate of $\frac{\partial slew(p)}{\partial slk^+}. This means that $\gamma\cdot |slk^+|$ is the required slew change to reach a non-negative slack in $p$. Realistically, $\gamma$ is just set to a small constant. $\theta_k$ is a damping factor that reduces potential oscillation.
