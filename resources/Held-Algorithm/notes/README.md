@@ -140,3 +140,43 @@ for output_pin in output_pins(c):
   project slewt(p) into [slewt([p]), slewlim(p)]
 ```
 Essentially, if $p$ is globally and locally critical, we decrease $slewt(p)$ by subtracting a number proportional to $slk^+(p)$ but not exceeding the constant $max\textunderscore change$. Otherwise, we increase $slewt(p)$ by adding a number proportional to the maximum of $slk^+(p)$ and $lc(p)$. The gamma ($\gamma$) constant is an estimate of $\frac{\partial slew(p)}{\partial slk^+}$. This means that $\gamma\cdot |slk^+|$ is the required slew change to reach a non-negative slack in $p$. Realistically, $\gamma$ is just set to a small constant. $\theta_k$ is a damping factor that reduces potential oscillation.
+
+The `project slewt(p) into [slewt([p]), slewlim(p)]` means that we project the slew target into the feasible range. The maximum slew limit $slewlim(p)$ for the output pin $p$ is induced by the attached sinks:
+
+$$
+slewlim(p)=min(slewlim(q)-slewdegrad(p,q))
+$$
+
+Given that $q$ is a predecessor pin of $p$ and $slewdegrad(p,q)$ is the same as before. $slewt([p])$ is the lowest possible slew that is achievable with any equivalent cell given the current load capacitance and input slew, preventing unrealistically small slew targets.
+
+#### Enhanced slew target refinement
+In some cases this algorithm leads to overloaded cells that cannot be further enlarged, or to locally non-critical cells that cannot be downsized sufficiently because of two large successors. In an entire timing optimization flow, giate sizing is alternated with repreater insertion absorbing such situations, but this can lead to unnecessary repeaters.
+
+These situations mean that slew targets of successors should be relaxed to enable smaller sizes, which the slew target refining algorithm already handles for locally uncritical cells. Now, when refining the slew target of a locally critical output pint $p\in P_{out}(c),c\in C$, we consider the largest estimated slew $est\textunderscore slew(p')$ of a most critical precessor pin
+
+$$
+p' \in argmax(est\textunderscore slew(r)| r\in\Gamma^-_{G_T}(Pin(c)), slack(r)=slk^-(c))
+$$
+
+If $est\textunderscore slew(p')>slewt(p)$, we increse the slew target in $p$ by
+
+$$
+slewt(p)=\lambda\cdot slewt(p)+(1-\lambda)\cdot est\textunderscore slew(p')
+$$
+
+where $0<\lambda<1$. The effect of an extraordinarily high value of $est\textunderscore slew(p')$ declines exponentially in the number of subsequent cell stages. $\lambda =0.7$ was found to be good. Note that less critical predecessors are not considered for relaxing the slew targets.
+
+To enable the enhanced slew target computation, the cells must be traversed in signal direction, reverse to the sizing step. Again, the slew targets of all cells in a lever of equal longest path distance from a register can be updated in parallel.
+
+## Local search gate sizing
+The local search is applied to further improbe the result of the fast global gate sizing. It collects a small set of cells attached to the most critical nets and sizes them one after another to their local optimum based on more accurate slack evaluations. The next iteration starts with collecting cells from scratch.
+
+First, we traverse all nets by increasing slack at their source pins and select all cells that are attached to the current net and to all nets that have the same slack at their sources. As soon as more than $K\in\mathbb{N}$ cells are collected the traversal of the net stops. Note this procedure collects at least the cells on the most critical paths and their direct successors for any choice of $K$. It is important to select not only the critical cells but all cells attachefd to a net, because the pin capacitances of the noncritical cells affect the timing. $K=0.2%$ of the total number of cells in the current design was found to be good.
+
+Cells are then traversed in the order of decreasing longest path distance from a register. A cell $c\in C$ is assigned to a library cell $B\in [c]$ of minimum size such that
+
+$$
+min(0, slk^-(c),slk^+(p)|p\in P_{out}(c))
+$$
+
+is maximized. Slacks are computed by an exact analysis within a small neighborhood around $c$. The neighborhood contains its predecessor cells and all direct successors of $c$ and its predecessor pins. The algorithm stops when the worst slack could not be improved in the last iteration. For runtime reasons, this criterion could be modified to stop when the worst slack improvement falls below some threshold or when some maximum number of iterations is reached.
