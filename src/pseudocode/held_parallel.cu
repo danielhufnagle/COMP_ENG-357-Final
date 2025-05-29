@@ -6,26 +6,6 @@
 using namespace held;
 using namespace std;
 
-// void initializeSlewTargets(const vector<Cell*>& cells) {
-//     for (auto& cell : cells) {
-//         for (auto& pout : cell->outputs) {
-//             double min_slew_target = numeric_limits<double>::max();
-
-//             // For each sink pin q connected to this output pin
-//             for (Pin* q : pout->connected_sinks) {
-//                 // Estimate degradation from pout to q
-//                 double degr = estimateSlewDegradation(q->capacitance_limit, pout->slew);
-//                 double allowed = q->slew_limit - degr;
-//                 min_slew_target = min(min_slew_target, allowed);
-//             }
-
-//             // Clamp to min possible slew for this pin
-//             double realistic_min = pout->realistic_min_slew;
-//             pout->slew_target = clamp(min_slew_target, realistic_min, pout->slew_limit);
-//         }
-//     }
-// }
-
 void held::cellAssignment(vector<Cell*>& cells, double input_slew) {
     //Feed input slew into all the standard cells, get output slews
     //For all output slews that qualify output slew<=slewlim, pick the smallest size    
