@@ -1,4 +1,5 @@
 #include <iostream>
+// header for cuda
 #include <cuda_runtime.h>
 
 // CUDA kernel function that runs on the GPU
