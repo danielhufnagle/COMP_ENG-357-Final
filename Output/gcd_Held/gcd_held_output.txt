@@ -1,0 +1,717 @@
+Using Held parameters: gamma=0.2, max_change=0.03, iterations=10
+[INFO ODB-0227] LEF file: Nangate45/Nangate45_tech.lef, created 22 layers, 27 vias
+[INFO ODB-0227] LEF file: Nangate45/Nangate45_stdcell.lef, created 135 library cells
+[WARNING STA-0441] set_input_delay relative to a clock defined on the same port/pin not allowed.
+[INFO IFP-0001] Added 57 rows of 422 site FreePDK45_38x28_10R_NP_162NW_34O.
+[INFO RSZ-0026] Removed 15 buffers.
+Found 0 macro blocks.
+Using 2 tracks default min distance between IO pins.
+[INFO PPL-0007] Random pin placement.
+[INFO TAP-0004] Inserted 114 endcaps.
+[INFO TAP-0005] Inserted 0 tapcells.
+[WARNING ORD-0046] -defer_connection has been deprecated.
+[WARNING ORD-0046] -defer_connection has been deprecated.
+[WARNING ORD-0046] -defer_connection has been deprecated.
+[WARNING ORD-0046] -defer_connection has been deprecated.
+[WARNING ORD-0046] -defer_connection has been deprecated.
+[INFO PDN-0001] Inserting grid: grid
+[INFO GPL-0002] DBU: 2000
+[INFO GPL-0003] SiteSize: (  0.190  1.400 ) um
+[INFO GPL-0004] CoreBBox: ( 10.070 11.200 ) ( 90.250 91.000 ) um
+[INFO GPL-0006] Number of instances:               461
+[INFO GPL-0007] Movable instances:                 347
+[INFO GPL-0008] Fixed instances:                   114
+[INFO GPL-0009] Dummy instances:                     0
+[INFO GPL-0010] Number of nets:                    418
+[INFO GPL-0011] Number of pins:                   1187
+[INFO GPL-0012] Die BBox:  (  0.000  0.000 ) ( 100.130 100.800 ) um
+[INFO GPL-0013] Core BBox: ( 10.070 11.200 ) ( 90.250 91.000 ) um
+[INFO GPL-0016] Core area:                    6398.364 um^2
+[INFO GPL-0017] Fixed instances area:           30.324 um^2
+[INFO GPL-0018] Movable instances area:        870.618 um^2
+[INFO GPL-0019] Utilization:                    13.672 %
+[INFO GPL-0020] Standard cells area:           870.618 um^2
+[INFO GPL-0021] Large instances area:            0.000 um^2
+[InitialPlace]  Iter: 1 conjugate gradient residual: 0.00000011 HPWL: 13147980
+[InitialPlace]  Iter: 2 conjugate gradient residual: 0.00000006 HPWL: 10588189
+[InitialPlace]  Iter: 3 conjugate gradient residual: 0.00000011 HPWL: 10597099
+[InitialPlace]  Iter: 4 conjugate gradient residual: 0.00000011 HPWL: 10599389
+[InitialPlace]  Iter: 5 conjugate gradient residual: 0.00000006 HPWL: 10608105
+[INFO GPL-0023] Placement target density:       0.3000
+[INFO GPL-0024] Movable insts average area:      2.509 um^2
+[INFO GPL-0025] Ideal bin area:                  8.363 um^2
+[INFO GPL-0026] Ideal bin count:                   765
+[INFO GPL-0027] Total bin area:               6398.364 um^2
+[INFO GPL-0028] Bin count (X, Y):          16 ,     16
+[INFO GPL-0029] Bin size (W * H):       5.011 *  4.987 um
+[INFO GPL-0030] Number of bins:                    256
+[INFO GPL-0031] HPWL: Half-Perimeter Wirelength
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+        1 |   0.8005 |  9.921835e+06 |   +0.00% |  8.23e-14 |      
+[INFO GPL-0088] Routability snapshot saved at iter = 4
+       10 |   0.4511 |  1.170367e+07 |  +17.96% |  1.28e-13 |      
+       20 |   0.4493 |  1.124457e+07 |   -3.92% |  2.08e-13 |      
+       30 |   0.4486 |  1.135781e+07 |   +1.01% |  3.39e-13 |      
+       40 |   0.4503 |  1.133943e+07 |   -0.16% |  5.52e-13 |      
+       50 |   0.4517 |  1.135819e+07 |   +0.17% |  8.99e-13 |      
+       60 |   0.4504 |  1.134322e+07 |   -0.13% |  1.46e-12 |      
+       70 |   0.4508 |  1.134804e+07 |   +0.04% |  2.38e-12 |      
+       80 |   0.4504 |  1.134458e+07 |   -0.03% |  3.88e-12 |      
+       90 |   0.4505 |  1.134671e+07 |   +0.02% |  6.33e-12 |      
+      100 |   0.4503 |  1.134594e+07 |   -0.01% |  1.03e-11 |      
+      110 |   0.4502 |  1.134647e+07 |   +0.00% |  1.68e-11 |      
+      120 |   0.4499 |  1.134835e+07 |   +0.02% |  2.73e-11 |      
+      130 |   0.4494 |  1.135012e+07 |   +0.02% |  4.45e-11 |      
+      140 |   0.4486 |  1.135297e+07 |   +0.03% |  7.26e-11 |      
+      150 |   0.4474 |  1.135598e+07 |   +0.03% |  1.18e-10 |      
+      160 |   0.4458 |  1.135922e+07 |   +0.03% |  1.93e-10 |      
+      170 |   0.4434 |  1.135695e+07 |   -0.02% |  3.14e-10 |      
+      180 |   0.4394 |  1.134256e+07 |   -0.13% |  5.11e-10 |      
+      190 |   0.4335 |  1.132307e+07 |   -0.17% |  8.32e-10 |      
+      200 |   0.4240 |  1.130998e+07 |   -0.12% |  1.36e-09 |      
+      210 |   0.4095 |  1.126734e+07 |   -0.38% |  2.21e-09 |      
+      220 |   0.3892 |  1.118384e+07 |   -0.74% |  3.60e-09 |      
+      230 |   0.3659 |  1.108254e+07 |   -0.91% |  5.86e-09 |      
+      240 |   0.3384 |  1.103281e+07 |   -0.45% |  9.17e-09 |      
+      250 |   0.3055 |  1.089680e+07 |   -1.23% |  1.35e-08 |      
+[INFO GPL-0040] Routability iteration: 1
+[INFO GPL-0041] Total routing overflow: 0.0000
+[INFO GPL-0042] Number of overflowed tiles: 0 (0.00%)
+[INFO GPL-0043] Average top 0.5% routing congestion: 0.7121
+[INFO GPL-0044] Average top 1.0% routing congestion: 0.6980
+[INFO GPL-0045] Average top 2.0% routing congestion: 0.6796
+[INFO GPL-0046] Average top 5.0% routing congestion: 0.6544
+[INFO GPL-0047] Routability iteration weighted routing congestion: 0.7050
+[INFO GPL-0050] Weighted routing congestion is lower than target routing congestion(1.0100), end routability optimization.
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+      260 |   0.2756 |  1.084917e+07 |   -0.44% |  1.99e-08 |      
+      270 |   0.2567 |  1.086499e+07 |   +0.15% |  2.93e-08 |      
+      280 |   0.2336 |  1.082786e+07 |   -0.34% |  4.32e-08 |      
+      290 |   0.2128 |  1.080683e+07 |   -0.19% |  6.36e-08 |      
+      300 |   0.1867 |  1.082030e+07 |   +0.12% |  9.37e-08 |      
+      310 |   0.1723 |  1.084038e+07 |   +0.19% |  1.38e-07 |      
+      320 |   0.1495 |  1.081024e+07 |   -0.28% |  2.03e-07 |      
+      330 |   0.1255 |  1.082258e+07 |   +0.11% |  2.99e-07 |      
+      340 |   0.1071 |  1.082590e+07 |   +0.03% |  4.41e-07 |      
+[INFO GPL-1001] Finished with Overflow: 0.098811
+[INFO GPL-1002] Placed Cell Area              870.6180
+[INFO GPL-1003] Available Free Area          6368.0400
+[INFO GPL-1004] Minimum Feasible Density        0.1400 (cell_area / free_area)
+[INFO GPL-1006]   Suggested Target Densities:
+[INFO GPL-1007]     - For 90% usage of free space: 0.1519
+[INFO GPL-1008]     - For 80% usage of free space: 0.1709
+Found 0 macro blocks.
+Using 2 tracks default min distance between IO pins.
+[INFO PPL-0001] Number of available slots 1220
+[INFO PPL-0002] Number of I/O             54
+[INFO PPL-0003] Number of I/O w/sink      54
+[INFO PPL-0004] Number of I/O w/o sink    0
+[INFO PPL-0005] Slots per section         200
+[INFO PPL-0008] Successfully assigned pins to sections.
+[INFO PPL-0012] I/O nets HPWL: 1724.32 um.
+Placement Analysis
+---------------------------------
+total displacement        268.2 u
+average displacement        0.6 u
+max displacement            2.7 u
+original HPWL            4359.7 u
+legalized HPWL           4538.4 u
+delta HPWL                    4 %
+
+worst slack min 0.058
+worst slack max -0.078
+tns max -0.706
+max capacitance
+
+Pin                                    Limit     Cap   Slack
+------------------------------------------------------------
+_672_/Q                                60.73   70.93  -10.20 (VIOLATED)
+
+
+=== Applying Held Gate Sizing Algorithm (Pre-CTS) ===
+Baseline metrics before Held optimization:
+  WNS: -0.078 ns
+  TNS: -0.706 ns
+  Area: 501.4 um²
+
+Applying Held gate sizing with parameters:
+  γ (gamma): 0.2
+  Max change: 0.03
+  Iterations: 10
+  Clock period: 0.485000 ns
+=== Starting Held Gate Sizing Algorithm (Pre-CTS) ===
+[INFO RSZ-0101] Starting Held's gate sizing algorithm
+[INFO RSZ-0118] Built cell info map: 461 total instances, 347 sizeable
+[INFO RSZ-0123] Computed longest distances: max_distance=100.0
+[INFO RSZ-0114] Held sizing iteration 1
+[INFO RSZ-0127] Assignment: processed 347 cells, changed 0 cells
+[INFO RSZ-0115] Iteration 1 - WS: 77.956 ps, SNS: -16.054 ps, Area: 1.445
+[INFO RSZ-0128] Refinement: θ_k=0.910, 119 targets changed
+[INFO RSZ-0114] Held sizing iteration 2
+[INFO RSZ-0127] Assignment: processed 347 cells, changed 0 cells
+[INFO RSZ-0115] Iteration 2 - WS: 77.956 ps, SNS: -16.054 ps, Area: 1.445
+[INFO RSZ-0124] Numerical convergence achieved
+[INFO RSZ-0117] Held sizing completed - WNS: -77.956 ps, TNS: -706.391 ps, Avg Area: 1.445, Iterations: 2
+=== Held Gate Sizing (Pre-CTS) Complete ===
+Held gate sizing (Pre-CTS) runtime: 0 seconds
+
+Held optimization (Pre-CTS) results:
+  Runtime: 0s
+  WNS: -0.156 ns (improvement: -0.078 ns)
+  TNS: -3.368 ns (improvement: -2.662 ns)
+  Area: 501.4 um² (change: +0.0%)
+[INFO CTS-0050] Root buffer is BUF_X4.
+[INFO CTS-0051] Sink buffer is BUF_X4.
+[INFO CTS-0052] The following clock buffers will be used for CTS:
+                    BUF_X4
+[INFO CTS-0049] Characterization buffer is BUF_X4.
+[INFO CTS-0007] Net "clk" found for clock "core_clock".
+[INFO CTS-0010]  Clock net "clk" has 35 sinks.
+[INFO CTS-0008] TritonCTS found 1 clock nets.
+[INFO CTS-0097] Characterization used 1 buffer(s) types.
+[INFO CTS-0201] 0 blockages from hard placement blockages and placed macros will be used.
+[INFO CTS-0027] Generating H-Tree topology for net clk.
+[INFO CTS-0028]  Total number of sinks: 35.
+[INFO CTS-0029]  Register sinks will be clustered in groups of up to 20 and with maximum cluster diameter of 100.0 um.
+[INFO CTS-0030]  Number of static layers: 0.
+[INFO CTS-0020]  Wire segment unit: 14000  dbu (7 um).
+[INFO CTS-0023]  Original sink region: [(75050, 49170), (171570, 155570)].
+[INFO CTS-0024]  Normalized sink region: [(5.36071, 3.51214), (12.255, 11.1121)].
+[INFO CTS-0025]     Width:  6.8943.
+[INFO CTS-0026]     Height: 7.6000.
+ Level 1
+    Direction: Vertical
+    Sinks per sub-region: 18
+    Sub-region size: 6.8943 X 3.8000
+[INFO CTS-0034]     Segment length (rounded): 2.
+ Level 2
+    Direction: Horizontal
+    Sinks per sub-region: 9
+    Sub-region size: 3.4471 X 3.8000
+[INFO CTS-0034]     Segment length (rounded): 1.
+[INFO CTS-0032]  Stop criterion found. Max number of sinks is 15.
+[INFO CTS-0035]  Number of sinks covered: 35.
+[INFO CTS-0018]     Created 5 clock buffers.
+[INFO CTS-0012]     Minimum number of buffers in the clock path: 2.
+[INFO CTS-0013]     Maximum number of buffers in the clock path: 2.
+[INFO CTS-0015]     Created 5 clock nets.
+[INFO CTS-0016]     Fanout distribution for the current clock = 8:1, 9:3..
+[INFO CTS-0017]     Max level of the clock tree: 2.
+[INFO CTS-0098] Clock net "clk"
+[INFO CTS-0099]  Sinks 36
+[INFO CTS-0100]  Leaf buffers 0
+[INFO CTS-0101]  Average sink wire length 101.43 um
+[INFO CTS-0102]  Path depth 2 - 2
+[INFO CTS-0207]  Leaf load cells 1
+[INFO RSZ-0058] Using max wire length 693um.
+Placement Analysis
+---------------------------------
+total displacement         12.7 u
+average displacement        0.0 u
+max displacement            1.9 u
+original HPWL            4707.1 u
+legalized HPWL           4718.8 u
+delta HPWL                    0 %
+
+
+=== Applying Held Gate Sizing Algorithm (Post-CTS) ===
+Baseline metrics before Post-CTS Held optimization:
+  WNS: -0.155 ns
+  TNS: -4.141 ns
+  Area: 511.3 um²
+
+Applying Held gate sizing (Post-CTS) with parameters:
+  γ (gamma): 0.2
+  Max change: 0.03
+  Iterations: 10
+  Clock propagation: Real (after CTS)
+=== Starting Held Gate Sizing Algorithm (Post-CTS) ===
+[INFO RSZ-0101] Starting Held's gate sizing algorithm
+[INFO RSZ-0118] Built cell info map: 467 total instances, 353 sizeable
+[INFO RSZ-0123] Computed longest distances: max_distance=1000.0
+[INFO RSZ-0114] Held sizing iteration 1
+[INFO RSZ-0127] Assignment: processed 353 cells, changed 56 cells
+[INFO RSZ-0115] Iteration 1 - WS: 252.793 ps, SNS: -139.108 ps, Area: 1.312
+[INFO RSZ-0128] Refinement: θ_k=0.910, 104 targets changed
+[INFO RSZ-0114] Held sizing iteration 2
+[INFO RSZ-0127] Assignment: processed 353 cells, changed 0 cells
+[INFO RSZ-0115] Iteration 2 - WS: 252.793 ps, SNS: -139.108 ps, Area: 1.312
+[INFO RSZ-0124] Numerical convergence achieved
+[INFO RSZ-0117] Held sizing completed - WNS: -252.793 ps, TNS: -6816.282 ps, Avg Area: 1.312, Iterations: 2
+=== Held Gate Sizing (Post-CTS) Complete ===
+Held gate sizing (Post-CTS) runtime: 0 seconds
+
+Held optimization (Post-CTS) results:
+  Runtime: 0s
+  WNS: -0.253 ns (improvement: -0.097 ns)
+  TNS: -6.816 ns (improvement: -2.675 ns)
+  Area: 463.1 um² (change: -9.4%)
+worst slack min 0.011
+worst slack max -0.253
+tns max -6.816
+max slew
+
+Pin                                     Limit     Slew    Slack
+---------------------------------------------------------------
+_672_/Q                                 0.199    0.226   -0.027 (VIOLATED)
+
+max capacitance
+
+Pin                                     Limit      Cap    Slack
+---------------------------------------------------------------
+_672_/Q                                60.730  102.049  -41.319 (VIOLATED)
+
+
+=== All Gate Sizing Completed Using Held Algorithm ===
+Placement Analysis
+---------------------------------
+total displacement          0.0 u
+average displacement        0.0 u
+max displacement            0.0 u
+original HPWL            4719.8 u
+legalized HPWL           4719.8 u
+delta HPWL                    0 %
+
+[INFO DRT-0149] Reading tech and libs.
+
+Units:                2000
+Number of layers:     21
+Number of macros:     135
+Number of vias:       33
+Number of viarulegen: 19
+
+[INFO DRT-0150] Reading design.
+
+Design:                   gcd
+Die area:                 ( 0 0 ) ( 200260 201600 )
+Number of track patterns: 20
+Number of DEF vias:       0
+Number of components:     467
+Number of terminals:      54
+Number of snets:          2
+Number of nets:           423
+
+[INFO DRT-0167] List of default vias:
+  Layer via2
+    default via: via2_5
+  Layer via3
+    default via: via3_2
+  Layer via4
+    default via: via4_0
+  Layer via5
+    default via: via5_0
+  Layer via6
+    default via: via6_0
+  Layer via7
+    default via: via7_0
+  Layer via8
+    default via: via8_0
+  Layer via9
+    default via: via9_0
+[INFO DRT-0162] Library cell analysis.
+[INFO DRT-0163] Instance analysis.
+[INFO DRT-0164] Number of unique instances = 36.
+[INFO DRT-0168] Init region query.
+[INFO DRT-0024]   Complete active.
+[INFO DRT-0024]   Complete Fr_VIA.
+[INFO DRT-0024]   Complete metal1.
+[INFO DRT-0024]   Complete via1.
+[INFO DRT-0024]   Complete metal2.
+[INFO DRT-0024]   Complete via2.
+[INFO DRT-0024]   Complete metal3.
+[INFO DRT-0024]   Complete via3.
+[INFO DRT-0024]   Complete metal4.
+[INFO DRT-0024]   Complete via4.
+[INFO DRT-0024]   Complete metal5.
+[INFO DRT-0024]   Complete via5.
+[INFO DRT-0024]   Complete metal6.
+[INFO DRT-0024]   Complete via6.
+[INFO DRT-0024]   Complete metal7.
+[INFO DRT-0024]   Complete via7.
+[INFO DRT-0024]   Complete metal8.
+[INFO DRT-0024]   Complete via8.
+[INFO DRT-0024]   Complete metal9.
+[INFO DRT-0024]   Complete via9.
+[INFO DRT-0024]   Complete metal10.
+[INFO DRT-0033] active shape region query size = 0.
+[INFO DRT-0033] FR_VIA shape region query size = 0.
+[INFO DRT-0033] metal1 shape region query size = 5911.
+[INFO DRT-0033] via1 shape region query size = 261.
+[INFO DRT-0033] metal2 shape region query size = 198.
+[INFO DRT-0033] via2 shape region query size = 261.
+[INFO DRT-0033] metal3 shape region query size = 204.
+[INFO DRT-0033] via3 shape region query size = 261.
+[INFO DRT-0033] metal4 shape region query size = 94.
+[INFO DRT-0033] via4 shape region query size = 40.
+[INFO DRT-0033] metal5 shape region query size = 8.
+[INFO DRT-0033] via5 shape region query size = 40.
+[INFO DRT-0033] metal6 shape region query size = 8.
+[INFO DRT-0033] via6 shape region query size = 16.
+[INFO DRT-0033] metal7 shape region query size = 6.
+[INFO DRT-0033] via7 shape region query size = 0.
+[INFO DRT-0033] metal8 shape region query size = 0.
+[INFO DRT-0033] via8 shape region query size = 0.
+[INFO DRT-0033] metal9 shape region query size = 0.
+[INFO DRT-0033] via9 shape region query size = 0.
+[INFO DRT-0033] metal10 shape region query size = 0.
+[INFO DRT-0165] Start pin access.
+[INFO DRT-0078]   Complete 184 pins.
+[INFO DRT-0081]   Complete 36 unique inst patterns.
+[INFO DRT-0084]   Complete 353 groups.
+#scanned instances     = 467
+#unique  instances     = 36
+#stdCellGenAp          = 765
+#stdCellValidPlanarAp  = 0
+#stdCellValidViaAp     = 613
+#stdCellPinNoAp        = 0
+#stdCellPinCnt         = 1144
+#instTermValidViaApCnt = 0
+#macroGenAp            = 0
+#macroValidPlanarAp    = 0
+#macroValidViaAp       = 0
+#macroNoAp             = 0
+[INFO DRT-0166] Complete pin access.
+[INFO DRT-0267] cpu time = 00:00:02, elapsed time = 00:00:00, memory = 218.57 (MB), peak = 218.57 (MB)
+[INFO GRT-0020] Min routing layer: metal2
+[INFO GRT-0021] Max routing layer: metal10
+[INFO GRT-0022] Global adjustment: 0%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0088] Layer metal1  Track-Pitch = 0.1400  line-2-Via Pitch: 0.1350
+[INFO GRT-0088] Layer metal2  Track-Pitch = 0.1900  line-2-Via Pitch: 0.1400
+[INFO GRT-0088] Layer metal3  Track-Pitch = 0.1400  line-2-Via Pitch: 0.1400
+[INFO GRT-0088] Layer metal4  Track-Pitch = 0.2800  line-2-Via Pitch: 0.2800
+[INFO GRT-0088] Layer metal5  Track-Pitch = 0.2800  line-2-Via Pitch: 0.2800
+[INFO GRT-0088] Layer metal6  Track-Pitch = 0.2800  line-2-Via Pitch: 0.2800
+[INFO GRT-0088] Layer metal7  Track-Pitch = 0.8000  line-2-Via Pitch: 0.8000
+[INFO GRT-0088] Layer metal8  Track-Pitch = 0.8000  line-2-Via Pitch: 0.8000
+[INFO GRT-0088] Layer metal9  Track-Pitch = 1.6000  line-2-Via Pitch: 1.6000
+[INFO GRT-0088] Layer metal10 Track-Pitch = 1.6000  line-2-Via Pitch: 1.6000
+[INFO GRT-0003] Macros: 0
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0004] Blockages: 0
+[INFO GRT-0019] Found 6 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 42
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+metal1     Horizontal          0             0          0.00%
+metal2     Vertical        25163         11146          55.70%
+metal3     Horizontal      33840         15456          54.33%
+metal4     Vertical        16039          6653          58.52%
+metal5     Horizontal      15792          6616          58.11%
+metal6     Vertical        16039          6764          57.83%
+metal7     Horizontal       4512          2152          52.30%
+metal8     Vertical         4610          2256          51.06%
+metal9     Horizontal       2256          2162          4.17%
+metal10    Vertical         2305          2162          6.20%
+---------------------------------------------------------------
+
+[INFO GRT-0197] Via related to pin nodes: 2075
+[INFO GRT-0198] Via related Steiner nodes: 57
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 2650
+[INFO GRT-0112] Final usage 3D: 10586
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+metal1               0             0            0.00%             0 /  0 /  0
+metal2           11146          1281           11.49%             0 /  0 /  0
+metal3           15456          1163            7.52%             0 /  0 /  0
+metal4            6653            79            1.19%             0 /  0 /  0
+metal5            6616            58            0.88%             0 /  0 /  0
+metal6            6764            27            0.40%             0 /  0 /  0
+metal7            2152            28            1.30%             0 /  0 /  0
+metal8            2256             0            0.00%             0 /  0 /  0
+metal9            2162             0            0.00%             0 /  0 /  0
+metal10           2162             0            0.00%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total            55367          2636            4.76%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 7673 um
+[INFO GRT-0014] Routed nets: 389
+[WARNING GRT-0246] No diode with LEF class CORE ANTENNACELL found.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+[INFO DRT-0149] Reading tech and libs.
+
+Units:                2000
+Number of layers:     21
+Number of macros:     135
+Number of vias:       33
+Number of viarulegen: 19
+
+[INFO DRT-0150] Reading design.
+
+Design:                   gcd
+Die area:                 ( 0 0 ) ( 200260 201600 )
+Number of track patterns: 20
+Number of DEF vias:       0
+Number of components:     467
+Number of terminals:      54
+Number of snets:          2
+Number of nets:           423
+
+[INFO DRT-0167] List of default vias:
+  Layer via2
+    default via: via2_5
+  Layer via3
+    default via: via3_2
+  Layer via4
+    default via: via4_0
+  Layer via5
+    default via: via5_0
+  Layer via6
+    default via: via6_0
+  Layer via7
+    default via: via7_0
+  Layer via8
+    default via: via8_0
+  Layer via9
+    default via: via9_0
+[INFO DRT-0162] Library cell analysis.
+[INFO DRT-0163] Instance analysis.
+[INFO DRT-0164] Number of unique instances = 36.
+[INFO DRT-0168] Init region query.
+[INFO DRT-0024]   Complete active.
+[INFO DRT-0024]   Complete Fr_VIA.
+[INFO DRT-0024]   Complete metal1.
+[INFO DRT-0024]   Complete via1.
+[INFO DRT-0024]   Complete metal2.
+[INFO DRT-0024]   Complete via2.
+[INFO DRT-0024]   Complete metal3.
+[INFO DRT-0024]   Complete via3.
+[INFO DRT-0024]   Complete metal4.
+[INFO DRT-0024]   Complete via4.
+[INFO DRT-0024]   Complete metal5.
+[INFO DRT-0024]   Complete via5.
+[INFO DRT-0024]   Complete metal6.
+[INFO DRT-0024]   Complete via6.
+[INFO DRT-0024]   Complete metal7.
+[INFO DRT-0024]   Complete via7.
+[INFO DRT-0024]   Complete metal8.
+[INFO DRT-0024]   Complete via8.
+[INFO DRT-0024]   Complete metal9.
+[INFO DRT-0024]   Complete via9.
+[INFO DRT-0024]   Complete metal10.
+[INFO DRT-0033] active shape region query size = 0.
+[INFO DRT-0033] FR_VIA shape region query size = 0.
+[INFO DRT-0033] metal1 shape region query size = 5911.
+[INFO DRT-0033] via1 shape region query size = 261.
+[INFO DRT-0033] metal2 shape region query size = 198.
+[INFO DRT-0033] via2 shape region query size = 261.
+[INFO DRT-0033] metal3 shape region query size = 204.
+[INFO DRT-0033] via3 shape region query size = 261.
+[INFO DRT-0033] metal4 shape region query size = 94.
+[INFO DRT-0033] via4 shape region query size = 40.
+[INFO DRT-0033] metal5 shape region query size = 8.
+[INFO DRT-0033] via5 shape region query size = 40.
+[INFO DRT-0033] metal6 shape region query size = 8.
+[INFO DRT-0033] via6 shape region query size = 16.
+[INFO DRT-0033] metal7 shape region query size = 6.
+[INFO DRT-0033] via7 shape region query size = 0.
+[INFO DRT-0033] metal8 shape region query size = 0.
+[INFO DRT-0033] via8 shape region query size = 0.
+[INFO DRT-0033] metal9 shape region query size = 0.
+[INFO DRT-0033] via9 shape region query size = 0.
+[INFO DRT-0033] metal10 shape region query size = 0.
+[INFO DRT-0165] Start pin access.
+[INFO DRT-0078]   Complete 184 pins.
+[INFO DRT-0081]   Complete 36 unique inst patterns.
+[INFO DRT-0084]   Complete 353 groups.
+#scanned instances     = 467
+#unique  instances     = 36
+#stdCellGenAp          = 765
+#stdCellValidPlanarAp  = 0
+#stdCellValidViaAp     = 613
+#stdCellPinNoAp        = 0
+#stdCellPinCnt         = 1144
+#instTermValidViaApCnt = 0
+#macroGenAp            = 0
+#macroValidPlanarAp    = 0
+#macroValidViaAp       = 0
+#macroNoAp             = 0
+[INFO DRT-0166] Complete pin access.
+[INFO DRT-0267] cpu time = 00:00:02, elapsed time = 00:00:00, memory = 220.21 (MB), peak = 256.82 (MB)
+[INFO DRT-0178] Init guide query.
+[INFO DRT-0036] active guide region query size = 0.
+[INFO DRT-0036] FR_VIA guide region query size = 0.
+[INFO DRT-0036] metal1 guide region query size = 1007.
+[INFO DRT-0036] via1 guide region query size = 0.
+[INFO DRT-0036] metal2 guide region query size = 940.
+[INFO DRT-0036] via2 guide region query size = 0.
+[INFO DRT-0036] metal3 guide region query size = 500.
+[INFO DRT-0036] via3 guide region query size = 0.
+[INFO DRT-0036] metal4 guide region query size = 22.
+[INFO DRT-0036] via4 guide region query size = 0.
+[INFO DRT-0036] metal5 guide region query size = 11.
+[INFO DRT-0036] via5 guide region query size = 0.
+[INFO DRT-0036] metal6 guide region query size = 8.
+[INFO DRT-0036] via6 guide region query size = 0.
+[INFO DRT-0036] metal7 guide region query size = 5.
+[INFO DRT-0036] via7 guide region query size = 0.
+[INFO DRT-0036] metal8 guide region query size = 0.
+[INFO DRT-0036] via8 guide region query size = 0.
+[INFO DRT-0036] metal9 guide region query size = 0.
+[INFO DRT-0036] via9 guide region query size = 0.
+[INFO DRT-0036] metal10 guide region query size = 0.
+[INFO DRT-0179] Init gr pin query.
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+[INFO DPL-0001] Placed 1381 filler instances.
+[INFO RCX-0431] Defined process_corner X with ext_model_index 0
+[INFO RCX-0029] Defined extraction corner X
+[INFO RCX-0435] Reading extraction model file Nangate45/Nangate45.rcx_rules ...
+[INFO RCX-0436] RC segment generation gcd (max_merge_res 50.0) ...
+[INFO RCX-0040] Final 1330 rc segments
+[INFO RCX-0439] Coupling Cap extraction gcd ...
+[INFO RCX-0440] Coupling threshhold is 0.1000 fF, coupling capacitance less than 0.1000 fF will be grounded.
+[INFO RCX-0442] 49% of 2097 wires extracted
+[INFO RCX-0442] 100% of 2097 wires extracted
+[INFO RCX-0045] Extract 423 nets, 1719 rsegs, 1719 caps, 2471 ccs
+[INFO RCX-0443] 423 nets finished
+Startpoint: reset (input port clocked by core_clock)
+Endpoint: _674_ (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: min
+
+     Cap     Slew    Delay     Time   Description
+---------------------------------------------------------------------------
+                     0.000    0.000   clock core_clock (rise edge)
+                     0.000    0.000   clock network delay (propagated)
+                     0.146    0.146 ^ input external delay
+   6.873    0.000    0.000    0.146 ^ reset (in)
+            0.000    0.000    0.146 ^ _498_/B1 (OAI22_X1)
+   1.522    0.005    0.010    0.156 v _498_/ZN (OAI22_X1)
+            0.005    0.000    0.156 v _674_/D (DFF_X1)
+                              0.156   data arrival time
+
+                     0.000    0.000   clock core_clock (rise edge)
+                     0.000    0.000   clock source latency
+   7.020    0.000    0.000    0.000 ^ clk (in)
+            0.000    0.000    0.000 ^ clkbuf_0_clk/A (BUF_X1)
+   8.920    0.022    0.036    0.036 ^ clkbuf_0_clk/Z (BUF_X1)
+            0.022    0.000    0.037 ^ clkbuf_2_3__f_clk/A (BUF_X1)
+  14.217    0.034    0.056    0.093 ^ clkbuf_2_3__f_clk/Z (BUF_X1)
+            0.034    0.000    0.093 ^ _674_/CK (DFF_X1)
+                     0.049    0.142   clock uncertainty
+                     0.000    0.142   clock reconvergence pessimism
+                     0.009    0.151   library hold time
+                              0.151   data required time
+---------------------------------------------------------------------------
+                              0.151   data required time
+                             -0.156   data arrival time
+---------------------------------------------------------------------------
+                              0.006   slack (MET)
+
+
+Startpoint: _676_ (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: resp_msg[15] (output port clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+     Cap     Slew    Delay     Time   Description
+---------------------------------------------------------------------------
+                     0.000    0.000   clock core_clock (rise edge)
+                     0.000    0.000   clock source latency
+   7.020    0.000    0.000    0.000 ^ clk (in)
+            0.000    0.000    0.000 ^ clkbuf_0_clk/A (BUF_X1)
+   8.920    0.022    0.036    0.036 ^ clkbuf_0_clk/Z (BUF_X1)
+            0.022    0.000    0.037 ^ clkbuf_2_0__f_clk/A (BUF_X1)
+  14.143    0.034    0.056    0.092 ^ clkbuf_2_0__f_clk/Z (BUF_X1)
+            0.034    0.001    0.094 ^ _676_/CK (DFF_X1)
+   3.889    0.008    0.094    0.188 v _676_/Q (DFF_X1)
+            0.008    0.000    0.188 v _345_/A (INV_X1)
+  10.150    0.025    0.033    0.221 ^ _345_/ZN (INV_X1)
+            0.025    0.000    0.221 ^ _350_/A1 (NOR2_X1)
+   1.673    0.008    0.011    0.232 v _350_/ZN (NOR2_X1)
+            0.008    0.000    0.232 v _351_/B2 (OAI21_X1)
+   6.804    0.041    0.057    0.289 ^ _351_/ZN (OAI21_X1)
+            0.041    0.000    0.289 ^ _363_/A1 (NAND2_X1)
+   1.770    0.013    0.019    0.308 v _363_/ZN (NAND2_X1)
+            0.013    0.000    0.308 v _367_/A1 (NAND2_X1)
+   6.569    0.020    0.028    0.337 ^ _367_/ZN (NAND2_X1)
+            0.020    0.000    0.337 ^ _376_/A1 (NAND2_X1)
+   1.665    0.009    0.015    0.352 v _376_/ZN (NAND2_X1)
+            0.009    0.000    0.352 v _393_/A1 (NAND2_X1)
+  11.906    0.031    0.038    0.391 ^ _393_/ZN (NAND2_X1)
+            0.031    0.001    0.392 ^ _404_/A1 (NAND2_X1)
+   1.675    0.011    0.017    0.409 v _404_/ZN (NAND2_X1)
+            0.011    0.000    0.409 v _415_/A1 (NAND2_X1)
+   7.133    0.021    0.029    0.438 ^ _415_/ZN (NAND2_X1)
+            0.021    0.000    0.438 ^ _421_/A1 (NAND2_X1)
+   1.870    0.009    0.016    0.454 v _421_/ZN (NAND2_X1)
+            0.009    0.000    0.454 v _427_/A1 (NAND2_X1)
+   4.489    0.015    0.021    0.476 ^ _427_/ZN (NAND2_X1)
+            0.015    0.000    0.476 ^ _431_/A1 (NAND2_X1)
+   3.732    0.011    0.019    0.495 v _431_/ZN (NAND2_X1)
+            0.011    0.000    0.496 v _433_/A1 (NAND2_X1)
+   1.868    0.010    0.016    0.511 ^ _433_/ZN (NAND2_X1)
+            0.010    0.000    0.511 ^ _437_/A1 (NAND2_X1)
+   3.103    0.009    0.016    0.527 v _437_/ZN (NAND2_X1)
+            0.009    0.000    0.527 v _439_/A1 (AND2_X1)
+   2.244    0.007    0.030    0.557 v _439_/ZN (AND2_X1)
+            0.007    0.000    0.557 v resp_msg[15] (out)
+                              0.557   data arrival time
+
+                     0.485    0.485   clock core_clock (rise edge)
+                     0.000    0.485   clock network delay (propagated)
+                    -0.049    0.436   clock uncertainty
+                     0.000    0.436   clock reconvergence pessimism
+                    -0.146    0.291   output external delay
+                              0.291   data required time
+---------------------------------------------------------------------------
+                              0.291   data required time
+                             -0.557   data arrival time
+---------------------------------------------------------------------------
+                             -0.266   slack (VIOLATED)
+
+
+worst slack min 0.006
+worst slack max -0.266
+tns max -7.441
+max slew
+
+Pin                                     Limit     Slew    Slack
+---------------------------------------------------------------
+_672_/Q                                 0.199    0.231   -0.032 (VIOLATED)
+
+max capacitance
+
+Pin                                     Limit      Cap    Slack
+---------------------------------------------------------------
+_672_/Q                                60.730  105.711  -44.981 (VIOLATED)
+
+Clock core_clock
+  0.095 source latency _698_/CK ^
+ -0.092 target latency _684_/CK ^
+  0.049 clock uncertainty
+  0.000 CRPR
+--------------
+  0.052 setup skew
+
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             4.53e-04   7.86e-05   2.77e-06   5.35e-04  31.5%
+Combinational          4.21e-04   5.14e-04   7.23e-06   9.42e-04  55.5%
+Clock                  5.61e-05   1.66e-04   1.22e-07   2.22e-04  13.1%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  9.30e-04   7.59e-04   1.01e-05   1.70e-03 100.0%
+                          54.7%      44.7%       0.6%
+Design area 463 u^2 7% utilization.
+
+=== Physical Design Flow with Held Algorithm Complete ===
+[?2004hopenroad> gui::show
+[?2004l[WARNING GUI-0076] QStandardPaths: wrong permissions on runtime directory /run/user/1000/, 0755 instead of 0700
